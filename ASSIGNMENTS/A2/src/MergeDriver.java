@@ -20,5 +20,14 @@ public class MergeDriver {
                 arr[i] = obj.nextInt(99);
             }
         }
+
+        if (type.equals("MS")) {
+            MergSort obj = new MergSort();
+            obj.sort(arr);
+        }
+        else if (type.equals("SMS")) {
+            StructuredMergSort obj = new StructuredMergSort();
+            obj.sort(arr);
+        }
     }
 }
