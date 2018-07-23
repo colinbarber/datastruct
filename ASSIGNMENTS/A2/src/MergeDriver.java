@@ -22,12 +22,10 @@ public class MergeDriver {
         }
 
         if (type.equals("MS")) {
-            MergSort obj = new MergSort();
-            obj.sort(arr);
+            MergSort.sort(arr);
         }
         else if (type.equals("SMS")) {
-            StructuredMergSort obj = new StructuredMergSort();
-            obj.sort(arr);
+            StructuredMergSort.sort(arr);
         }
     }
 }

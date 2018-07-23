@@ -1,6 +1,6 @@
 public class StructuredMergSort {
 
-    public void sort(int[] arr) {
+    public static void sort(int[] arr) {
 
         int[] buff = arr;
         JumpList runs;

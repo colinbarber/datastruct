@@ -2,9 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d6041c37-48a8-4865-90b8-62ba1dd4ec17" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/src/MergSort2.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ARun.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ARun.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/JumpList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/JumpList.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/MergSort.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MergSort.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MergeDriver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/MergeDriver.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/StructuredMergSort.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/StructuredMergSort.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -20,17 +23,17 @@
       <file leaf-file-name="MergeDriver.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/MergeDriver.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="435">
-              <caret line="29" column="26" selection-start-line="29" selection-start-column="26" selection-end-line="29" selection-end-column="26" />
+            <state relative-caret-position="405">
+              <caret line="27" column="41" selection-start-line="27" selection-start-column="41" selection-end-line="27" selection-end-column="41" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MergSort.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="MergSort.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/MergSort.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="5" column="22" selection-start-line="4" selection-start-column="8" selection-end-line="5" selection-end-column="22" />
+            <state relative-caret-position="410">
+              <caret line="88" column="23" selection-start-line="88" selection-start-column="23" selection-end-line="88" selection-end-column="23" />
             </state>
           </provider>
         </entry>
@@ -38,20 +41,18 @@
       <file leaf-file-name="StructuredMergSort.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/StructuredMergSort.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="7" selection-start-line="7" selection-end-line="7" />
+            <state relative-caret-position="30">
+              <caret line="2" column="18" selection-start-line="2" selection-start-column="18" selection-end-line="2" selection-end-column="18" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="JumpList.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="JumpList.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/JumpList.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="600">
-              <caret line="40" column="50" selection-start-line="40" selection-start-column="50" selection-end-line="40" selection-end-column="50" />
+            <state relative-caret-position="510">
+              <caret line="44" column="16" lean-forward="true" selection-start-line="44" selection-start-column="16" selection-end-line="44" selection-end-column="53" />
               <folding>
-                <element signature="e#118#119#0" expanded="true" />
-                <element signature="e#162#163#0" expanded="true" />
                 <element signature="e#194#195#0" expanded="true" />
                 <element signature="e#243#244#0" expanded="true" />
                 <element signature="e#274#275#0" expanded="true" />
@@ -64,15 +65,19 @@
       <file leaf-file-name="ARun.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ARun.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="10" selection-start-line="10" selection-end-line="10" />
+            <state relative-caret-position="135">
+              <caret line="9" column="45" lean-forward="true" selection-start-line="9" selection-start-column="45" selection-end-line="9" selection-end-column="45" />
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="ISSort.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/../A1/src/com/coeurl/ISSort.java">
-          <provider selected="true" editor-type-id="text-editor" />
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="136">
+              <caret line="20" column="79" lean-forward="true" selection-start-line="20" selection-start-column="8" selection-end-line="20" selection-end-column="79" />
+            </state>
+          </provider>
         </entry>
       </file>
     </leaf>
@@ -97,11 +102,12 @@
       <list>
         <option value="$PROJECT_DIR$/src/com/coen352/Main.java" />
         <option value="$PROJECT_DIR$/src/com/coen352/MergeDriver.java" />
+        <option value="$PROJECT_DIR$/src/StructuredMergSort.java" />
+        <option value="$PROJECT_DIR$/src/MergSort2.java" />
         <option value="$PROJECT_DIR$/src/MergeDriver.java" />
         <option value="$PROJECT_DIR$/src/ARun.java" />
-        <option value="$PROJECT_DIR$/src/MergSort.java" />
-        <option value="$PROJECT_DIR$/src/StructuredMergSort.java" />
         <option value="$PROJECT_DIR$/src/JumpList.java" />
+        <option value="$PROJECT_DIR$/src/MergSort.java" />
       </list>
     </option>
   </component>
@@ -156,7 +162,7 @@
     <configuration name="Main" type="Application" factoryName="Application" temporary="true">
       <option name="MAIN_CLASS_NAME" value="MergeDriver" />
       <module name="A2" />
-      <option name="PROGRAM_PARAMETERS" value="MS 20 23 22" />
+      <option name="PROGRAM_PARAMETERS" value="MS 15 2 17" />
       <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
       <RunnerSettings RunnerId="Run" />
       <ConfigurationWrapper RunnerId="Run" />
@@ -199,7 +205,14 @@
       <option name="project" value="LOCAL" />
       <updated>1531857139699</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="JumpList implementation">
+      <created>1532190315465</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1532190315465</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -208,10 +221,11 @@
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Messages" order="7" weight="0.32900944" />
       <window_info anchor="right" id="Palette&#9;" order="3" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="right" id="Maven Projects" order="3" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32900944" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32900944" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.32900944" />
       <window_info anchor="bottom" id="Terminal" order="7" />
       <window_info id="Designer" order="2" />
@@ -224,7 +238,6 @@
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="bottom" id="Messages" order="7" weight="0.32900944" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Find" order="1" />
@@ -237,7 +250,8 @@
     <MESSAGE value="added classes" />
     <MESSAGE value="MergDriver implementation" />
     <MESSAGE value="ARun implementation" />
-    <option name="LAST_COMMIT_MESSAGE" value="ARun implementation" />
+    <MESSAGE value="JumpList implementation" />
+    <option name="LAST_COMMIT_MESSAGE" value="JumpList implementation" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/MergeDriver.java">
@@ -276,8 +290,6 @@
         <state relative-caret-position="150">
           <caret line="15" column="53" selection-start-line="15" selection-start-column="53" selection-end-line="15" selection-end-column="53" />
           <folding>
-            <element signature="e#118#119#0" expanded="true" />
-            <element signature="e#162#163#0" expanded="true" />
             <element signature="e#194#195#0" expanded="true" />
             <element signature="e#243#244#0" expanded="true" />
             <element signature="e#274#275#0" expanded="true" />
@@ -322,8 +334,6 @@
         <state relative-caret-position="210">
           <caret line="16" lean-forward="true" selection-start-line="16" selection-end-line="16" />
           <folding>
-            <element signature="e#118#119#0" expanded="true" />
-            <element signature="e#162#163#0" expanded="true" />
             <element signature="e#194#195#0" expanded="true" />
             <element signature="e#243#244#0" expanded="true" />
             <element signature="e#274#275#0" expanded="true" />
@@ -346,49 +356,58 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ARun.java">
+    <entry file="file://$PROJECT_DIR$/src/StructuredMergSort.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" selection-start-line="10" selection-end-line="10" />
+        <state relative-caret-position="30">
+          <caret line="2" column="18" selection-start-line="2" selection-start-column="18" selection-end-line="2" selection-end-column="18" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/MergSort.java">
+    <entry file="file://$PROJECT_DIR$/src/MergSort2.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="22" selection-start-line="4" selection-start-column="8" selection-end-line="5" selection-end-column="22" />
+        <state relative-caret-position="330">
+          <caret line="22" column="21" lean-forward="true" selection-end-line="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ARun.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="45" lean-forward="true" selection-start-line="9" selection-start-column="45" selection-end-line="9" selection-end-column="45" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/MergeDriver.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="435">
-          <caret line="29" column="26" selection-start-line="29" selection-start-column="26" selection-end-line="29" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/StructuredMergSort.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" selection-start-line="7" selection-end-line="7" />
+        <state relative-caret-position="405">
+          <caret line="27" column="41" selection-start-line="27" selection-start-column="41" selection-end-line="27" selection-end-column="41" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/../A1/src/com/coeurl/ISSort.java">
-      <provider selected="true" editor-type-id="text-editor" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="20" column="79" lean-forward="true" selection-start-line="20" selection-start-column="8" selection-end-line="20" selection-end-column="79" />
+        </state>
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/JumpList.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="600">
-          <caret line="40" column="50" selection-start-line="40" selection-start-column="50" selection-end-line="40" selection-end-column="50" />
+        <state relative-caret-position="510">
+          <caret line="44" column="16" lean-forward="true" selection-start-line="44" selection-start-column="16" selection-end-line="44" selection-end-column="53" />
           <folding>
-            <element signature="e#118#119#0" expanded="true" />
-            <element signature="e#162#163#0" expanded="true" />
             <element signature="e#194#195#0" expanded="true" />
             <element signature="e#243#244#0" expanded="true" />
             <element signature="e#274#275#0" expanded="true" />
             <element signature="e#336#337#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/MergSort.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="410">
+          <caret line="88" column="23" selection-start-line="88" selection-start-column="23" selection-end-line="88" selection-end-column="23" />
         </state>
       </provider>
     </entry>

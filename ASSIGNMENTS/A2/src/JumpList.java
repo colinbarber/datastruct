@@ -1,11 +1,13 @@
 public class JumpList{
 
     ARun[] runs;
-    int head = -1;
-    int tail = -1;
+    public int head = -1;
+    public int tail = -1;
 
     public JumpList (int queueLength) {
-        runs = new ARun[queueLength];
+        runs = new ARun[queueLength+1];
+        System.out.println("queuelength = "+queueLength);
+        System.out.println("Jumplist length = "+runs.length);
     }
 
     public boolean isEmpty() {
@@ -23,6 +25,7 @@ public class JumpList{
             else { head++; }
             runs[head] = push;
             if (tail == -1) { tail++; }
+            System.out.println("Queued: "+push.getStart());
         }
         else { System.out.println("Error: Queue is full"); }
     }
