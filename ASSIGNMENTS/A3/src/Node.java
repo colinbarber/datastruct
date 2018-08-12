@@ -1,12 +1,12 @@
 public class Node {
 
     // instantiates a 2- or 3-node with one or two values and two or three children.
-    Node parent;
-    int val;
-    int val2;
-    Node lChild;
-    Node mChild;
-    Node rChild;
+    public Node parent;
+    public int val;
+    public int val2;
+    public Node lChild;
+    public Node mChild;
+    public Node rChild;
 
     // instantiates a root node.
     public Node (int v) {
