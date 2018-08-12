@@ -25,7 +25,7 @@ public class JumpList{
             else { head++; }
             runs[head] = push;
             if (tail == -1) { tail++; }
-            System.out.println("Queued: "+push.getStart());
+            System.out.println("Queued: "+push.getStart()+", head = "+head+", tail = "+tail);
         }
         else { System.out.println("Error: Queue is full"); }
     }
@@ -38,10 +38,12 @@ public class JumpList{
             if (head != tail) {
                 if (tail == runs.length-1) { tail = 0; }
                 else { tail++; }
+                System.out.println("Dequeued: "+pop.getStart()+", head = "+head+", tail = "+tail);
             }
             else {
                 head = -1;
                 tail = -1;
+                System.out.println("Dequeued: "+pop.getStart()+", head = "+head+", tail = "+tail);
                 System.out.println("Queue emptied!");
             }
         }
