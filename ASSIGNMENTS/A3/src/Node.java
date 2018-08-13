@@ -55,4 +55,7 @@ public class Node {
         rChild = r;
     }
 
+    public Node getParent() {
+        return parent;
+    }
 }

@@ -2,8 +2,10 @@ public class Tree {
 
     // forms a balanced Two-Three Tree from a given set of add and find commands.
     Node root;
+    ParentStack stack = new ParentStack();
     int comparisons = 0;
     int threeNodes = 0;
+    String traversal = "";
 
     // new empty Tree.
     public Tree() {}
@@ -12,7 +14,6 @@ public class Tree {
     public void add(int i) {
         if (root == null) {
             root = new Node(i);
-            System.out.println("new root added: "+Integer.toString(i));
         }
         // call when node's target destination is non-null.
         else {
@@ -21,14 +22,6 @@ public class Tree {
     }
 
     public void compareAdd(int i, Node self, Node parent) {
-
-        if (parent == null) {
-            System.out.println("parent is null");
-        }
-
-        else {
-            System.out.println("my parent is: "+Integer.toString(parent.val));
-        }
 
         // node value is less than the target's left value.
         if (i < self.val) {
@@ -39,7 +32,6 @@ public class Tree {
                 self.val2 = self.val;
                 self.val = i;
                 threeNodes += 1;
-                System.out.println("3-node created: "+Integer.toString(self.val)+" "+Integer.toString(self.val2));
             }
             // if leaf 3-node, split and promote target's left value.
             else if (self.lChild == null) {
@@ -47,19 +39,19 @@ public class Tree {
             }
             // if internal node, compares to the leftmost child.
             else {
+                stack.push(parent);
                 compareAdd(i, self.lChild, self);
             }
         }
 
         // node value is greater than the target's left value.
         else if (i > self.val) {
-            comparisons += 1;
+            comparisons += 2;
 
             // if leaf 2-node, transforms to 3-node with i in rightmost position.
             if (self.val2 == -1 && self.lChild == null) {
                 self.val2 = i;
                 threeNodes += 1;
-                System.out.println("3-node created: "+Integer.toString(self.val)+" "+Integer.toString(self.val2));
             }
             // if leaf 3-node, compare against val2.
             else if (self.lChild == null) {
@@ -67,12 +59,11 @@ public class Tree {
                 // if node value is less than the target's right value, split and promote node value.
                 if (i < self.val2) {
                     comparisons += 1;
-
                     splitPromote(parent, self, self.val, i, self.val2, null, null);
                 }
                 // if node value is more than the target's right value, split and promote node value.
                 else if (i > self.val2) {
-                    comparisons += 1;
+                    comparisons += 2;
                     splitPromote(parent, self, self.val, self.val2, i, null, null);
                 }
                 // node value is equal to the target's right value.
@@ -83,7 +74,7 @@ public class Tree {
 
             // if internal 2-node, compares to the rightmost child.
             else if (self.val2 == -1) {
-                System.out.println("to the right");
+                stack.push(parent);
                 compareAdd(i, self.rChild, self);
             }
 
@@ -93,11 +84,13 @@ public class Tree {
                 // if node value is less than the target's right value, compare to the middle child.
                 if (i < self.val2) {
                     comparisons += 1;
+                    stack.push(parent);
                     compareAdd(i, self.mChild, self);
                 }
                 // if node value is more than the target's right value, compare to the right child.
                 else if (i > self.val2) {
-                    comparisons += 1;
+                    comparisons += 2;
+                    stack.push(parent);
                     compareAdd(i, self.rChild, self);
                 }
                 // node value is equal to the target's right value.
@@ -119,11 +112,8 @@ public class Tree {
         // create new root if splitting the root node.
         if (parent == null) {
 
-            System.out.println("splitPromote: my parent is null");
-
             // if leaf node.
             if (newL == null) {
-                System.out.println("new root + children");
                 root = new Node(mVal, new Node(root, lVal), new Node(root, rVal));
             }
             // if internal node.
@@ -135,12 +125,11 @@ public class Tree {
         // split a 3-node and promote to a 2-node.
         else if (parent.val2 == -1) {
 
-            System.out.println("splitPromote: my parent is a 2-node - "+Integer.toString(parent.val));
-
             // coming from the left child.
             if (self == parent.lChild) {
                 parent.val2 = parent.val;
                 parent.val = mVal;
+                threeNodes += 1;
 
                 // if leaf node.
                 if (newL == null) {
@@ -160,6 +149,7 @@ public class Tree {
             // coming from the right child.
             else {
                 parent.val2 = mVal;
+                threeNodes += 1;
 
                 // if leaf node.
                 if (newL == null) {
@@ -180,18 +170,17 @@ public class Tree {
         else {
             Node splitL;
             Node splitR;
-
-            System.out.println("splitPromote: my parent is a 3-node - "+Integer.toString(parent.val));
+            Node gParent = stack.pop();
 
             // if leaf node.
             if (newL == null) {
 
                 // coming from the left child.
                 if (self == parent.lChild) {
-                    splitL = new Node(parent.parent, mVal, new Node(self, lVal), new Node(self, rVal));
-                    splitR = new Node(parent.parent, parent.val2, parent.mChild, parent.rChild);
-                    if (parent.parent != null) {
-                        splitPromote(parent.parent, parent, mVal, parent.val, parent.val2, splitL, splitR);
+                    splitL = new Node(gParent, mVal, new Node(self, lVal), new Node(self, rVal));
+                    splitR = new Node(gParent, parent.val2, parent.mChild, parent.rChild);
+                    if (gParent != null) {
+                        splitPromote(gParent, parent, mVal, parent.val, parent.val2, splitL, splitR);
                     }
                     else {
                         splitPromote(null, parent, mVal, parent.val, parent.val2, splitL, splitR);
@@ -200,10 +189,10 @@ public class Tree {
                 }
                 // coming from the middle child.
                 else if (self == parent.mChild) {
-                    splitL = new Node(parent.parent, parent.val, parent.lChild, new Node(self, lVal));
-                    splitR = new Node(parent.parent, parent.val2, new Node(self, rVal), parent.rChild);
-                    if (parent.parent != null) {
-                        splitPromote(parent.parent, parent, parent.val, mVal, parent.val2, splitL, splitR);
+                    splitL = new Node(gParent, parent.val, parent.lChild, new Node(self, lVal));
+                    splitR = new Node(gParent, parent.val2, new Node(self, rVal), parent.rChild);
+                    if (gParent != null) {
+                        splitPromote(gParent, parent, parent.val, mVal, parent.val2, splitL, splitR);
 
                     }
                     else {
@@ -212,10 +201,10 @@ public class Tree {
                 }
                 // coming from the right child.
                 else {
-                    splitL = new Node(parent.parent, parent.val, parent.lChild, parent.mChild);
-                    splitR = new Node(parent.parent, mVal, new Node(self, lVal), new Node(self, rVal));
-                    if (parent.parent != null) {
-                        splitPromote(parent.parent, parent, parent.val, parent.val2, mVal, splitL, splitR);
+                    splitL = new Node(gParent, parent.val, parent.lChild, parent.mChild);
+                    splitR = new Node(gParent, mVal, new Node(self, lVal), new Node(self, rVal));
+                    if (gParent != null) {
+                        splitPromote(gParent, parent, parent.val, parent.val2, mVal, splitL, splitR);
                     }
                     else {
                         splitPromote(null, parent, parent.val, parent.val2, mVal, splitL, splitR);
@@ -229,10 +218,10 @@ public class Tree {
 
                 // coming from the left child.
                 if (self == parent.lChild) {
-                    splitL = new Node(parent.parent, mVal, newL, newR);
-                    splitR = new Node(parent.parent, parent.val2, parent.mChild, parent.rChild);
-                    if (parent.parent != null) {
-                        splitPromote(parent.parent, parent, mVal, parent.val, parent.val2, splitL, splitR);
+                    splitL = new Node(gParent, mVal, newL, newR);
+                    splitR = new Node(gParent, parent.val2, parent.mChild, parent.rChild);
+                    if (gParent != null) {
+                        splitPromote(gParent, parent, mVal, parent.val, parent.val2, splitL, splitR);
                     }
                     else {
                         splitPromote(null, parent, mVal, parent.val, parent.val2, splitL, splitR);
@@ -241,25 +230,25 @@ public class Tree {
                 }
                 // coming from the middle child.
                 else if (self == parent.mChild) {
-                    splitL = new Node(parent.parent, parent.val, parent.lChild, newL);
-                    splitR = new Node(parent.parent, parent.val2, newR, parent.rChild);
-                    if (parent.parent != null) {
-                        splitPromote(parent.parent, self, parent.val, mVal, parent.val2, splitL, splitR);
+                    splitL = new Node(gParent, parent.val, parent.lChild, newL);
+                    splitR = new Node(gParent, parent.val2, newR, parent.rChild);
+                    if (gParent != null) {
+                        splitPromote(gParent, parent, parent.val, mVal, parent.val2, splitL, splitR);
                     }
                     else {
-                        splitPromote(null, self, parent.val, mVal, parent.val2, splitL, splitR);
+                        splitPromote(null, parent, parent.val, mVal, parent.val2, splitL, splitR);
                     }
                 }
                 // coming from the right child.
                 else {
                     splitL = new Node(parent.parent, parent.val, parent.lChild, parent.mChild);
                     splitR = new Node(parent.parent, mVal, newL, newR);
-                    if (parent.parent != null) {
-                        splitPromote(parent.parent, self, parent.val, parent.val2, mVal, splitL, splitR);
+                    if (gParent != null) {
+                        splitPromote(gParent, parent, parent.val, parent.val2, mVal, splitL, splitR);
 
                     }
                     else {
-                        splitPromote(null, self, parent.val, parent.val2, mVal, splitL, splitR);
+                        splitPromote(null, parent, parent.val, parent.val2, mVal, splitL, splitR);
 
                     }
                 }
@@ -287,7 +276,7 @@ public class Tree {
 
         // node value is greater than the target's left value.
         else if (i > n.val) {
-            comparisons += 1;
+            comparisons += 2;
 
             // if 3-node, compare against val2.
             if (n.val2 != -1) {
@@ -304,7 +293,7 @@ public class Tree {
                 }
                 // if node value is more than the target's right value, check right child.
                 else if (i > n.val2) {
-                    comparisons += 1;
+                    comparisons += 2;
                     if (n.rChild == null) {
                         System.out.println("Error, Target not in tree: "+Integer.toString(i));
                     }
@@ -336,8 +325,8 @@ public class Tree {
     }
 
     // prints the pre-order traversal of the Tree.
-    public void traversal(Node n) {
-        System.out.print(Integer.toString(n.val)+" ");
+    public String traversal(Node n) {
+        traversal = traversal+(Integer.toString(n.val)+" ");
 
         // if 2-node.
         if (n.val2 == -1) {
@@ -348,12 +337,14 @@ public class Tree {
         }
         // if 3-node.
         else {
-            System.out.print(Integer.toString(n.val2)+" ");
+            traversal = traversal+(Integer.toString(n.val2)+" ");
             if (n.lChild != null) {
                 traversal(n.lChild);
                 traversal(n.mChild);
                 traversal(n.rChild);
             }
         }
+
+        return traversal;
     }
 }
